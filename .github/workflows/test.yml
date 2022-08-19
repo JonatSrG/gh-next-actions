@@ -3,16 +3,16 @@ name: build-test
 on: [pull_request]
 
 jobs:
-  builds:
+  build:
     runs-on: ubuntu-latest
     strategy:
-      matrix: 
-      node: ['16']
+      matrix:
+        node: ['16']
     steps:
-      - uses: actions/checkout/chekout@v2
+      - uses: actions/checkout@v2
       - name: Setup Node 16
         uses: actions/setup-node@v2
         with:
           node-version: 16.x
       - run: npm install
-      - run: npm run lint 
+      - run: npm run lint
