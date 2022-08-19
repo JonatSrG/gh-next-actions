@@ -5,13 +5,14 @@ on: [pull_request]
 jobs:
   builds:
     runs-on: ubuntu-latest
-    strategy
-      matrix: node ['16']
-    steps
+    strategy:
+      matrix: 
+      node: ['16']
+    steps:
       - uses: actions/checkout/chekout@v2
       - name: Setup Node 16
         uses: actions/setup-node@v2
         with:
           node-version: 16.x
       - run: npm install
-      - run: npm run lint
+      - run: npm run lint 
